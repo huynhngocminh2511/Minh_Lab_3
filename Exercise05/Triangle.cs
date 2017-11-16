@@ -8,25 +8,32 @@ namespace Exercise05
 {
     class Triangle : Shape
     {
-        public int q { set; get; }
-        public int w { set; get; }
-        public int e { set; get; }
+        public int A { set; get; }
+        public int B { set; get; }
+        public int C { set; get; }
 
-        public Triangle(int q, int w, int e)
+        public Triangle(int A, int B, int C)
         {
-            this.q = q;
-            this.w = w;
-            this.e = e;
+            this.A = A;
+            this.B = B;
+            this.C = C;
+        }
+
+        public static bool CheckTriangle(int A, int B, int C)
+        {
+            return (A + B > C && B + C > A && C + A > B);
         }
 
         public override double GetPerimeter()
         {
-            return q + w + e;
+            return A + B + C;
         }
 
         public override double GetArea()
         {
-            var area = Math.Sqrt((q + w + e) * (q + w - e) * (w + e - q) * (e + q - w)) / 4;
+            var p = GetPerimeter() / 2.0;
+            var area = Math.Sqrt(p * (p - A) * (p - B) * (p - C));
+            //var area = Math.Sqrt((A + B + C) * (A + B - C) * (B + C - A) * (C + A - B)) / 4;
             return area;
         }
     }

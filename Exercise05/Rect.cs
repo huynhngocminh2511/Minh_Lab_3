@@ -10,15 +10,18 @@ namespace Exercise05
     {
         public int Width { set; get; }
         public int Height { set; get; }
+
         public Rect(int Width, int Height)
         {
             this.Width = Width;
             this.Height = Height;
         }
+
         public override double GetPerimeter()
         {
             return (Width + Height) * 2;
         }
+
         public override double GetArea()
         {
             return Width * Height;
