@@ -11,12 +11,14 @@ namespace Exercise02
         public string Name { set; get; }
         public DateTime Birthday { set; get; }
         public double Score { set; get; }
+
         public Student(string Name,DateTime Birthday,double Score)
         {
             this.Name = Name;
             this.Birthday = Birthday;
             this.Score = Score;
         }
+
         public override string ToString()
         {
             return this.Name + " " + this.Birthday.ToString("dd'/'mm'/'yyyy") + " " + this.Score;

@@ -23,11 +23,7 @@ namespace Exercise02
                 Console.Write("Birthday(dd/mm/yyyy): ");
                 var str = Console.ReadLine();
                 Console.WriteLine();
-                var arr = str.Split('/');
-                var day = int.Parse(arr[0]);
-                var month = int.Parse(arr[1]);
-                var year = int.Parse(arr[2]);
-                var birthday = new DateTime(year, month, day);
+                var birthday = ChangeToDateTime(str);
                 Console.Write("Score: ");
                 var score = double.Parse(Console.ReadLine());
                 Console.WriteLine();
@@ -39,6 +35,14 @@ namespace Exercise02
                 Console.WriteLine(stu.ToString());
             }
             Console.ReadKey();
+        }
+        static DateTime ChangeToDateTime(string str)
+        {
+            var arr = str.Split('/');
+            var day = int.Parse(arr[0]);
+            var month = int.Parse(arr[1]);
+            var year = int.Parse(arr[2]);
+            return new DateTime(year, month, day);
         }
     }
 }
