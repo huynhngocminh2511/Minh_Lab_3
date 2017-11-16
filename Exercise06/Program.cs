@@ -16,73 +16,29 @@ namespace Exercise06
             Console.WriteLine("Minimal: " + fra.ToString());
             var fra1 = new Fraction(2, 3);
             var fra2 = new Fraction(2, 4);
-            fra = fra1 + fra2;
-            Console.WriteLine("2/3 + 2/4: " + fra.ToString());
-            fra = fra1 - fra2;
-            Console.WriteLine("2/3 - 2/4: " + fra.ToString());
-            fra = fra1 * fra2;
-            Console.WriteLine("2/3 * 2/4: " + fra.ToString());
-            fra = fra1 / fra2;
-            Console.WriteLine("2/3 / 2/4: " + fra.ToString());
-            fra = !fra2;
-            Console.WriteLine("!2/4: " + fra.ToString());
+            Console.WriteLine($"{fra1} + {fra2} = {fra1 + fra2}");
+            Console.WriteLine($"{fra1} - {fra2} = {fra1 - fra2}");
+            Console.WriteLine($"{fra1} * {fra2} = {fra1 * fra2}");
+            Console.WriteLine($"{fra1} / {fra2} = {fra1 / fra2}");
+            Console.WriteLine($"!{fra2} = {!fra2}");
             fra1 = new Fraction(2, 3);
             fra2 = new Fraction(2, 4);
-            Console.WriteLine("2/3 compare 2/4");
-            if (fra1 >= fra2) 
-            {
-                Console.WriteLine(">=");
-            }
-            if (fra1 > fra2)
-            {
-                Console.WriteLine(">");
-            }
-            if (fra1 <= fra2)
-            {
-                Console.WriteLine("<=");
-            }
-            if (fra1 < fra2)
-            {
-                Console.WriteLine("<");
-            }
+            Console.WriteLine($"{fra1} > {fra2} = {fra1 > fra2}");
+            Console.WriteLine($"{fra1} < {fra2} = {fra1 < fra2}");
+            Console.WriteLine($"{fra1} >= {fra2} = {fra1 >= fra2}");
+            Console.WriteLine($"{fra1} <= {fra2} = {fra1 <= fra2}");
             fra1 = new Fraction(2, 3);
             fra2 = new Fraction(2, 3);
-            Console.WriteLine("2/3 compare 2/3");
-            if (fra1 >= fra2)
-            {
-                Console.WriteLine(">=");
-            }
-            if (fra1 > fra2)
-            {
-                Console.WriteLine(">");
-            }
-            if (fra1 <= fra2)
-            {
-                Console.WriteLine("<=");
-            }
-            if (fra1 < fra2)
-            {
-                Console.WriteLine("<");
-            }
+            Console.WriteLine($"{fra1} > {fra2} = {fra1 > fra2}");
+            Console.WriteLine($"{fra1} < {fra2} = {fra1 < fra2}");
+            Console.WriteLine($"{fra1} >= {fra2} = {fra1 >= fra2}");
+            Console.WriteLine($"{fra1} <= {fra2} = {fra1 <= fra2}");
             fra1 = new Fraction(2, 4);
             fra2 = new Fraction(2, 3);
-            Console.WriteLine("2/4 compare 2/3");
-            if (fra1 >= fra2)
-            {
-                Console.WriteLine(">=");
-            }
-            if (fra1 > fra2)
-            {
-                Console.WriteLine(">");
-            }
-            if (fra1 <= fra2)
-            {
-                Console.WriteLine("<=");
-            }
-            if (fra1 < fra2)
-            {
-                Console.WriteLine("<");
-            }
+            Console.WriteLine($"{fra1} > {fra2} = {fra1 > fra2}");
+            Console.WriteLine($"{fra1} < {fra2} = {fra1 < fra2}");
+            Console.WriteLine($"{fra1} >= {fra2} = {fra1 >= fra2}");
+            Console.WriteLine($"{fra1} <= {fra2} = {fra1 <= fra2}");
             Console.ReadKey();
         }
     }

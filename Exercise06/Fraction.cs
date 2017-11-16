@@ -19,7 +19,7 @@ namespace Exercise06
         
         public void Minimal()
         {
-            var gcd = GCD(a, b);
+            var gcd = GreatestCommonDivisor(a, b);
             a = a / gcd;
             b = b / gcd;
         }
@@ -94,7 +94,7 @@ namespace Exercise06
             return new Fraction(q.b, q.a);
         }
 
-        public int GCD(int q, int w)
+        public int GreatestCommonDivisor(int q, int w)
         {
             while (q * w != 0) 
             {
