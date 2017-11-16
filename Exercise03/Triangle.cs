@@ -8,34 +8,36 @@ namespace Exercise03
 {
     class Triangle
     {
-        public int q { set; get; }
-        public int w { set; get; }
-        public int e { set; get; }
-        public Triangle(int q, int w, int e)
+        public int A { set; get; }
+        public int B { set; get; }
+        public int C { set; get; }
+
+        public Triangle(int A, int B, int C)
         {
-            this.q = q;
-            this.w = w;
-            this.e = e;
+            this.A = A;
+            this.B = B;
+            this.C = C;
         }
+
         public String GetTriangleType()
         {
             var str = "Type: ";
-            if (q + w > e && w + e > q && e + q > w)
+            if (CheckTriangle(A, B, C))
             {
                 int kt = 0;
-                if (q == w && w == e)
+                if (A == B && B == C)
                 {
                     str = str + "Equilateral Triangle";
                     kt = 1;
                 }
                 else
                 {
-                    if (q == w || w == e || e == q)
+                    if (A == B || B == C || C == A)
                     {
                         str = str + "Isosceles Triangle";
                         kt = 1;
                     }
-                    if (q * q + w * w == e * e || w * w + e * e == q * q || e * e + q * q == w * w)
+                    if (A * A + B * B == C * C || B * B + C * C == A * A || C * C + A * A == B * B)
                     {
                         str = str + "Square Triangle";
                         kt = 1;
@@ -54,23 +56,32 @@ namespace Exercise03
             }
             return str;
         }
+
+        public static bool CheckTriangle(int A, int B, int C)
+        {
+            return (A + B > C && B + C > A && C + A > B);
+        }
+
         public int GetPerimeter()
         {
             if (GetTriangleType().Equals("Not Triangle"))
             {
                 return 0;
             }
-            var perimeter = q + w + e;
-            return perimeter;
+            return A + B + C;
         }
+
         public double GetArea()
         {
             if (GetTriangleType().Equals("Not Triangle"))
             {
                 return 0;
             }
-            var area = Math.Sqrt((q + w + e) * (q + w - e) * (w + e - q) * (e + q - w)) / 4;
+            var p = GetPerimeter() / 2.0;
+            var area = Math.Sqrt(p * (p - A) * (p - B) * (p - C));
+            //var area = Math.Sqrt((A + B + C) * (A + B - C) * (B + C - A) * (C + A - B)) / 4;
             return area;
         }
     }
 }
+    
