@@ -33,7 +33,6 @@ namespace Exercise05
         {
             var p = GetPerimeter() / 2.0;
             var area = Math.Sqrt(p * (p - A) * (p - B) * (p - C));
-            //var area = Math.Sqrt((A + B + C) * (A + B - C) * (B + C - A) * (C + A - B)) / 4;
             return area;
         }
     }
