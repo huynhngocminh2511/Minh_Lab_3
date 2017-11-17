@@ -8,51 +8,51 @@ namespace Exercise06
 {
     class Fraction
     {
-        public int a { set; get; }
-        public int b { set; get; }
+        public int A { set; get; }
+        public int B { set; get; }
 
-        public Fraction(int a, int b)
+        public Fraction(int A, int B)
         {
-            this.a = a;
-            this.b = b;
+            this.A = A;
+            this.B = B;
         }
         
         public void Minimal()
         {
-            var gcd = GreatestCommonDivisor(a, b);
-            a = a / gcd;
-            b = b / gcd;
+            var gcd = GreatestCommonDivisor(A, B);
+            A = A / gcd;
+            B = B / gcd;
         }
 
         public override string ToString()
         {
-            return a + "/" + b;
+            return A + "/" + B;
         }
 
         public static Fraction operator +(Fraction q, Fraction w)
         {
-            var e = new Fraction(q.a * w.b + q.b * w.a, q.b * w.b);
+            var e = new Fraction(q.A * w.B + q.B * w.A, q.B * w.B);
             e.Minimal();
             return e;
         }
 
         public static Fraction operator -(Fraction q, Fraction w)
         {
-            var e = new Fraction(q.a * w.b - q.b * w.a, q.b * w.b);
+            var e = new Fraction(q.A * w.B - q.B * w.A, q.B * w.B);
             e.Minimal();
             return e;
         }
 
         public static Fraction operator *(Fraction q, Fraction w)
         {
-            var e = new Fraction(q.a * w.a, q.b * w.b);
+            var e = new Fraction(q.A * w.A, q.B * w.B);
             e.Minimal();
             return e;
         }
 
         public static Fraction operator /(Fraction q, Fraction w)
         {
-            var e = new Fraction(q.a * w.b, q.b * w.a);
+            var e = new Fraction(q.A * w.B, q.B * w.A);
             e.Minimal();
             return e;
         }
@@ -61,7 +61,7 @@ namespace Exercise06
         {
             q.Minimal();
             w.Minimal();
-            return (q.a != w.a || q.b != w.b);
+            return (q.A != w.A || q.B != w.B);
         }
 
         public static bool operator ==(Fraction q, Fraction w)
@@ -71,27 +71,27 @@ namespace Exercise06
 
         public static bool operator >=(Fraction q, Fraction w)
         {
-            return (q.a * w.b >= q.b * w.a);
+            return (q.A * w.B >= q.B * w.A);
         }
 
         public static bool operator >(Fraction q, Fraction w)
         {
-            return (q.a * w.b > q.b * w.a);
+            return (q.A * w.B > q.B * w.A);
         }
 
         public static bool operator <=(Fraction q, Fraction w)
         {
-            return (q.a * w.b <= q.b * w.a);
+            return (q.A * w.B <= q.B * w.A);
         }
 
         public static bool operator <(Fraction q, Fraction w)
         {
-            return (q.a * w.b < q.b * w.a);
+            return (q.A * w.B < q.B * w.A);
         }
 
         public static Fraction operator !(Fraction q)
         {
-            return new Fraction(q.b, q.a);
+            return new Fraction(q.B, q.A);
         }
 
         public int GreatestCommonDivisor(int q, int w)
