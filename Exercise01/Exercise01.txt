@@ -1,0 +1,12 @@
+﻿Abstract Class
+Cho phép khai báo field.
+Các phương thức có thể có thân hàm hoặc không.
+Class dẫn xuất chỉ kế thừa được từ 1 abstrace class.
+Có chứa constructor.
+Các phương thức có từ khóa access modifier.
+Interface
+Không cho phép khai báo field.
+Các phương thức chỉ khai báo không có thân hàm.
+Class triển khai có thể triển khai nhiều interface.
+Không chứa constructor.
+Các phương thức không có chứa từ khóa access modifier.
